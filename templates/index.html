@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="{{ url_for('static', filename='bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+  <title>IntroduceTeam3</title>
+</head>
+
+<body>
+  <div class="header">
+    <h1>THIS IS SPARTA</h1>
+  </div>
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="alert alert-secondary" style="width: 80%; margin-left: 10%; margin-right: 10%; text-align: center; font-weight: bold;" role="alert">
+        팀 소개입니다!
+      </div>
+
+      <div class="introduce" style="width: 1100px; margin: 0 auto; margin-bottom: 20px">
+        <div class="card-group custom-card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Introduce ourself</h5>
+              함께 성장하는 3조, 팀 '300' 입니다. 팀명은 스파르타클럽에 영감을 받아, 스파르타하면 떠오르는 영화인 '300' 에서 따왔습니다.
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Goal</h5>
+              <ul>
+                <li>미니플젝 완성</li>
+                <li>웹개발 4강 완강</li>
+                <li>TIL & 코드카다</li>
+              </ul>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Ground Rules</h5>
+              <ul>
+                <li>서로 존칭 & 존중하기</li>
+                <li>경직되지 않는 분위기</li>
+                <li>자기관리 철저</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="alert alert-secondary" style="width: 80%; margin-left: 10%; margin-right: 10%; text-align: center; font-weight: bold;" role="alert">
+        함께하는 팀원들입니다! 멤버카드에 마우스를 얹으면 추가정보를 확인할 수 있습니다.
+      </div>
+
+      <div class="row row-cols-1 row-cols-md-5 g-0" style="margin-left: 10%; margin-right: 10%">
+        <!-- First Member -->
+        <div class="col mb-4">
+          <div class="card text-bg-warning mb-3 member-card" id="out_div0">
+            <img src="{{ data[0].image_url }}" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">{{ data[0].name }}</h5>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">{{ data[0].role }}</li>
+              <li class="list-group-item">{{ data[0].mbti }}</li>
+              <li class="list-group-item">{{ data[0].comment }}</li>
+            </ul>
+            <div class="card-body">
+              <a href="{{ data[0].blog_url }}" class="btn btn-dark">Velog</a>
+              <a href="#" class="btn btn-dark">Github</a>
+            </div>
+          </div>
+
+          <div class="card detail-card" id="popupContent0" style="display: none;">
+            <div class="card-body">
+              <h5 class="card-title">Detail</h5>
+              <ul>
+                <li>{{ data[0].pros }}</li>
+                <li>{{ data[0].work_style }}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Second Member -->
+        <div class="col mb-4">
+          <div class="card text-bg-secondary mb-3 member-card" id="out_div1">
+            <img src="{{ data[1].image_url }}" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">{{ data[1].name }}</h5>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">{{ data[1].role }}</li>
+              <li class="list-group-item">{{ data[1].mbti }}</li>
+              <li class="list-group-item">{{ data[1].comment }}</li>
+            </ul>
+            <div class="card-body">
+              <a href="{{ data[1].blog_url }}" class="btn btn-dark">Velog</a>
+              <a href="#" class="btn btn-dark">Github</a>
+            </div>
+          </div>
+
+          <div class="card detail-card" id="popupContent1" style="display: none;">
+            <div class="card-body">
+              <h5 class="card-title">Detail</h5>
+              <ul>
+                <li>{{ data[1].pros }}</li>
+                <li>{{ data[1].work_style }}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Third Member -->
+        <div class="col mb-4">
+          <div class="card text-bg-warning mb-3 member-card" id="out_div2">
+            <img src="{{ data[2].image_url }}" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">{{ data[2].name }}</h5>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">{{ data[2].role }}</li>
+              <li class="list-group-item">{{ data[2].mbti }}</li>
+              <li class="list-group-item">{{ data[2].comment }}</li>
+            </ul>
+            <div class="card-body">
+              <a href="{{ data[2].blog_url }}" class="btn btn-dark">Velog</a>
+              <a href="#" class="btn btn-dark">Github</a>
+            </div>
+          </div>
+
+          <div class="card detail-card" id="popupContent2" style="display: none;">
+            <div class="card-body">
+              <h5 class="card-title">Detail</h5>
+              <ul>
+                <li>{{ data[2].pros }}</li>
+                <li>{{ data[2].work_style }}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fourth Member -->
+        <div class="col mb-4">
+          <div class="card text-bg-secondary mb-3 member-card" id="out_div3">
+            <img src="{{ data[3].image_url }}" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">{{ data[3].name }}</h5>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">{{ data[3].role }}</li>
+              <li class="list-group-item">{{ data[3].mbti }}</li>
+              <li class="list-group-item">{{ data[3].comment }}</li>
+            </ul>
+            <div class="card-body">
+              <a href="{{ data[3].blog_url }}" class="btn btn-dark">Velog</a>
+              <a href="#" class="btn btn-dark">Github</a>
+            </div>
+          </div>
+
+          <div class="card detail-card" id="popupContent3" style="display: none;">
+            <div class="card-body">
+              <h5 class="card-title">Detail</h5>
+              <ul>
+                <li>{{ data[3].pros }}</li>
+                <li>{{ data[3].work_style }}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- js -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const members = [
+        { out_div: 'out_div0', popupContent: 'popupContent0' },
+        { out_div: 'out_div1', popupContent: 'popupContent1' },
+        { out_div: 'out_div2', popupContent: 'popupContent2' },
+        { out_div: 'out_div3', popupContent: 'popupContent3' }
+      ];
+
+      members.forEach(member => {
+        const outDiv = document.getElementById(member.out_div);
+        const popupContent = document.getElementById(member.popupContent);
+        outDiv.addEventListener('mouseover', function() {
+          popupContent.style.display = 'block';
+        });
+        outDiv.addEventListener('mouseout', function() {
+          popupContent.style.display = 'none';
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+
+.header {
+  background-color: black;
+  height: 150px;
+  width: 100%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  text-align: center;
+}
+
+.footer {
+  background-color: rgb(39, 39, 39);
+  height: 250px;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+
+  position: absolute;
+  bottom: 0;
+  color: white;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: -90px;
+  /* footer의 상단에서 시작하도록 설정 */
+  left: 50%;
+  margin-left: -50px;
+  /* 삼각형의 가로 크기의 절반만큼 왼쪽으로 이동 */
+  border-width: 50px;
+  /* 삼각형의 크기 */
+  border-style: solid;
+  border-color: transparent transparent rgb(39, 39, 39) transparent;
+  /* 삼각형의 색상 설정 */
+}
+
+.custom-card-group {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.container {
+  flex: 1;
+  /* container 내용이 화면의 남은 공간을 채우도록 함 */
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  /* footer와 container 사이의 간격 조정 */
+}
+
+.detail-card {
+  display: none;
+}
