@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 import os
 from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 app = Flask(__name__)
@@ -8,6 +9,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'da
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
+migrate = Migrate(app, db)
 
 class Member(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -19,6 +21,7 @@ class Member(db.Model):
     work_style = db.Column(db.String, nullable=False)
     image_url = db.Column(db.String, nullable=False)
     blog_url = db.Column(db.String, nullable=False)
+    git_url = db.Column(db.String, nullable=True)
 
     def __repr__(self):
         return f'{self.name} - {self.role}'
